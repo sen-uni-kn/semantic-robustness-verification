@@ -20,7 +20,7 @@ You need a working [conda](https://docs.conda.io/en/latest/) installation.
 Run the install script from the root directory:
 
 ```bash
-bash install/install_scip-env-conda.sh
+bash install/install_env.sh
 conda activate scip-env-conda
 ```
 
@@ -36,7 +36,7 @@ The environment can be installed manually as well, using `conda env install inst
 To run a verification experiment:
 
 ```bash
-python main.py data/example_params/params_mnist.json
+python src/main.py data/example_params/params_mnist.json
 ```
 
 The system will either train a model or load an existing one, then perform robustness verification and repair based on SSIM similarity to a reference image.
@@ -51,7 +51,7 @@ The experiment is configured via a JSON file. Below is an example and explanatio
 
 ```jsonc
 {
-    "path": "./data/experiments/mnist",         // Output directory for storing experiment results (logs, metrics, etc.)
+    "path": "./data/experiments/mnist",         // Output directory for storing experiment results (logs, etc.)
 
     "dimension": [1, 4, 4],                     // Input dimensions (C × H × W), e.g. 1 channel, 4x4 image
 
