@@ -48,37 +48,40 @@ The experiment is configured via a JSON file. Below is an example and explanatio
 
 ```json
 {
-  "path": "./data/experiments/mnist",
-  "dimension": [1, 4, 4],
+    "path": "./data/experiments/mnist",         # Output directory for storing experiment results (logs, metrics, etc.)
 
-  "ri": {
-    "path": "./data/ri/mnist/2.png",
-    "class_idx": 2
-  },
+    "dimension": [1, 4, 4],                     # Input dimensions (C × H × W), e.g. 1 channel, 4x4 image
 
-  "model": {
-    "dataset": "MNIST",
-    "hidden_layer": [6, 6, 6],
-    "load_model": true,
-    "path": "./data/models/mnist",
-    "data_path": "./__data__",
-    "selected_classes": [1, 3, 5, 7, 9],
-    "epochs": 50,
-    "batch_size": 32
-  },
+    "ri": {                                     # Reference image configuration
+        "path": "./data/ri/mnist/2.png",        # Path to the reference image
+        "class_idx": 2                          # Ground truth class index of the reference image
+    },
 
-  "minlp": {
-    "distance": "ssim",
-    "threshold": 0.99,
-    "timeout": 86400,
-    "tolerance": 4
-  },
+    "model": {
+        "dataset": "MNIST",                     # Dataset used for training; either "MNIST" or "GTSRB"
+        "hidden_layer": [6, 6, 6],              # Sizes of the hidden layers in the neural network
+        "load_model": true,                     # Whether to load an existing model from disk (true) or train from scratch (false)
+        "path": "./data/models/mnist",          # Path to either:
+                                                #  - A directory containing a model named using the naming convention
+                                                #  - A direct path to a model file (e.g., "model_i1x4x4_l6-6-6_o5.pt")
+        "data_path": "./__data__",              # Location of the training data; will be downloaded if not existent
+        "selected_classes": [1, 3, 5, 7, 9],    # List of classes to train on; if empty or None, all dataset classes are used
+        "epochs": 50,                           # Number of training epochs
+        "batch_size": 32                        # Batch size for training
+    },
 
-  "repair": {
-    "batch_size": 32,
-    "penalty_increase": 1.1,
-    "lr": 0.01
-  }
+    "minlp": {                                  # Configuration for MINLP
+        "distance": "ssim",                     # Distance metric for image similarity (only "ssim" supported atm.)
+        "threshold": 0.99,                      # After repair, all images with distance > threshold to the RI must be classified correctly
+        "timeout": 86400,                       # Timeout for the verification process (in seconds), e.g. 86400 = 24h; per verification run
+        "tolerance": 4                          # Verification tolerance (10^(-threshold))
+    },
+
+    "repair": {
+        "batch_size": 32,                       # Batch size used during the model repair process
+        "penalty_increase": 1.1,                # Factor by which penalty for misclassification is increased over iterations
+        "lr": 0.01                              # Learning rate used for gradient-based repair or optimisation
+    }
 }
 ```
 
