@@ -49,7 +49,7 @@ The experiment is configured via a JSON file. Below is an example and explanatio
 
 ### Example: MNIST, class "2", 4×4 input, 6-6-6 hidden layers
 
-```json
+```jsonc
 {
     "path": "./data/experiments/mnist",         # Output directory for storing experiment results (logs, metrics, etc.)
 
