@@ -1,0 +1,20 @@
+name: scip-env-conda
+channels:
+  - defaults
+  - pytorch
+  - conda-forge
+
+dependencies:
+  - python=3.10
+  - pytorch=2.4.1
+  - torchvision=0.19.1
+  - cpuonly
+  - numpy
+  - pillow
+  - tqdm
+  - pyscipopt
+  - pip
+
+  - pip:
+    - ilock
+    - git+https://github.com/Verified-Intelligence/auto_LiRPA.git
