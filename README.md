@@ -6,7 +6,7 @@
 
 This tool verifies and repairs robustness properties of PyTorch neural networks using image similarity metrics.
 
-It currently supports the **Structural Similarity Index (SSIM)** to define perturbation sets around a reference image. Verification ensures that all sufficiently similar images (under SSIM) are classified consistently by the model.
+It currently supports the **Structural Similarity Index (SSIM)** to define perturbation sets around a reference image. The verification process guarantees correct classification for all inputs that are structurally similar to a reference image, as measured by SSIM.
 
 > SSIM captures **luminance**, **contrast**, and **structural** similarity between two images. \
   For details, see [SSIM Definition](#ssim-definition).
