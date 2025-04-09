@@ -1,0 +1,41 @@
+# Python cache and virtualenvs
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs, models, and output
+*.log
+*.pt
+*.pth
+*.onnx
+*.h5
+
+# Custom project rules
+
+# Ignore __data__ completely
+__data__/
+
+# Ignore everything in data/ except 'ri/' and 'example_params/'
+data/*
+!data/ri/
+!data/ri/**
+!data/example_params/
+!data/example_params/**
