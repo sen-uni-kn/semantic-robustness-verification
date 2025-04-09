@@ -47,7 +47,7 @@ The system will either train a model or load an existing one, then perform robus
 
 The experiment is configured via a JSON file. Below is an example and explanations.
 
-### Example: MNIST, class "2", 4×4 input, 6-6-6 hidden layers
+### Example: MNIST, repair class "2", 4×4 input, 6-6-6 hidden layers
 
 ```jsonc
 {
