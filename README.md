@@ -8,7 +8,8 @@ This tool verifies and repairs robustness properties of PyTorch neural networks 
 
 It currently supports the **Structural Similarity Index (SSIM)** to define perturbation sets around a reference image. Verification ensures that all sufficiently similar images (under SSIM) are classified consistently by the model.
 
-> SSIM captures **luminance**, **contrast**, and **structural** similarity between two images. For details, see [SSIM Definition](#ssim-definition).
+> SSIM captures **luminance**, **contrast**, and **structural** similarity between two images. \
+  For details, see [SSIM Definition](#ssim-definition).
 
 ---
 
@@ -25,6 +26,8 @@ conda activate scip-env-conda
 
 This sets up the environment `scip-env-conda` using `install/scip-env-conda.yaml`. \
 ⚠️ The script will **delete** any existing conda environment with that name.
+
+The environment can be installed manually as well, using `conda env install install/scip-env-conda.yaml`.
 
 ---
 
