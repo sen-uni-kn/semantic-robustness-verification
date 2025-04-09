@@ -1,6 +1,6 @@
 # Semantic Robustness Verification for Neural Networks using Image Similarity
 
-**Author:** *Jannick Strobel*
+TODO Link to Paper
 
 ## Overview
 
