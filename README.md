@@ -1,10 +1,10 @@
-# Semantic Robustness Verification for Neural Networks using Image Similarity
+# Semantic Robustness Verification for Neural Networks using Image Similarity Measures
 
 TODO Link to Paper
 
 ## Overview
 
-This tool verifies and repairs robustness properties of PyTorch neural networks using image similarity metrics.
+This tool verifies and repairs robustness properties of PyTorch neural networks using image similarity measures.
 
 It currently supports the **Structural Similarity Index (SSIM)** to define perturbation sets around a reference image. The verification process guarantees correct classification for all inputs that are structurally similar to a reference image, as measured by SSIM.
 
